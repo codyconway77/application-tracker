@@ -4,6 +4,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 
 import { trpc } from "../utils/trpc";
 import ApplicationForm from "../components/ApplicationForm";
+import ApplicationCard from "../components/ApplicationCard";
 
 // Cool gradient
 // bg-gradient-to-b from-[#2e026d] to-[#15162c]
@@ -30,14 +31,10 @@ const Home: NextPage = () => {
             <ApplicationForm />
           </div>
           <h3 className="text-3xl">Applications</h3>
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row flex-wrap gap-4">
             {applications.data?.map(application => {
               return (
-                <div className="p-4 rounded-md border-2 border-neutral bg-secondary/90 hover:bg-secondary" key={application.id}>
-                  <p className="text-white">Company: {application.company}</p>
-                  <p className="text-white">Job Title: {application.jobTitle}</p>
-                  <p className="text-white">Date: {`${application.applicationDate.getMonth()}-${application.applicationDate.getUTCDate()}-${application.applicationDate.getFullYear()}`}</p>
-                </div>
+                <ApplicationCard key={application.id} application={application} />
               )
             })}
           </div>
