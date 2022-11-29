@@ -30,7 +30,7 @@ const Home: NextPage = () => {
           <div className="flex flex-col items-center gap-2">
             <ApplicationForm />
           </div>
-          <h3 className="text-3xl">Applications</h3>
+          <h3 className="text-3xl">Applications {applications.data && `(${applications.data?.length})`}</h3>
           <div className="flex flex-row flex-wrap gap-4">
             {applications.data?.map(application => {
               return (
