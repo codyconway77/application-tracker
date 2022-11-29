@@ -3,6 +3,7 @@ import { trpc } from '../utils/trpc';
 
 const ApplicationForm = () => {
     const applicationMutation = trpc.application.createApplication.useMutation();
+    const utils = trpc.useContext();
 
     // State
     const [company, setCompany] = useState('');
@@ -20,6 +21,9 @@ const ApplicationForm = () => {
                 company: company,
                 jobTitle: jobDesc,
                 applicationDate: appDate,
+            }, {
+                onSuccess: () => utils.application.invalidate(),
+                onError: e => console.error(e),
             })
         } catch (e) {
             console.error(e);
