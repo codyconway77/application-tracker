@@ -19,7 +19,7 @@ export const applicationRouter = router({
     .mutation(({ ctx, input }) => {
         const newApplication = {
             ...input,
-            user: ctx.session.user
+            userId: ctx.session.user.id
         }
         return ctx.prisma.application.create({ data: newApplication });
     }),
