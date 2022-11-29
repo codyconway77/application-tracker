@@ -25,3 +25,9 @@ Also checkout these awesome tutorials on `create-t3-app`.
 ## How do I deploy this?
 
 Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+
+## Start up for local development
+
+SQLite is the default database at the moment which will work in local.
+1. `npx prisma db push` to sync Prisma schema with db and generate Typescript types & restart Typescript server
+2. `npm run dev`
