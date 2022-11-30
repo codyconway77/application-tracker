@@ -10,7 +10,7 @@ const ApplicationForm = () => {
     const [jobDesc, setJobDesc] = useState('');
     const [appDate, setAppDate] = useState<Date>(new Date(Date.now()));
 
-    const dateString = useMemo(() => appDate ? `${appDate.getFullYear()}-${appDate.getMonth()}-${appDate.getUTCDate()}` : '', [appDate]);
+    const dateString = useMemo(() => appDate ? `${appDate.getFullYear()}-${appDate.getMonth()}-${appDate.getUTCDate() < 10 ? '0'+appDate.getUTCDate() : appDate.getUTCDate()}` : '', [appDate]);
 
     const onSubmit = () => {
         try {
