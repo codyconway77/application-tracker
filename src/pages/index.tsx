@@ -37,7 +37,7 @@ const Home: NextPage = () => {
       <main className="flex min-h-screen flex-col items-center justify-center bg-base">
         <div className="container flex flex-col items-center justify-center gap-6 px-4 py-16">
           <h1 className="text-5xl font-extrabold tracking-tight text-black sm:text-[5rem]">
-            Application <span className="text-secondary">Tracker</span>
+            Application <span className="text-primary">Tracker</span>
           </h1>
           {/* <div className="flex flex-col items-center gap-2">
             <AuthShowcase />

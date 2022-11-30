@@ -45,7 +45,7 @@ const ApplicationForm = () => {
                     const date = new Date(e.target.value);
                     setAppDate(date);
                 }} />
-                <button type='button' className='rounded-full px-8 py-2 text-secondary bg-secondary/30 hover:bg-secondary/50 font-semibold' onClick={onSubmit}>Create</button>
+                <button type='button' className='rounded-full px-8 py-2 text-neutral bg-primary/40 hover:bg-primary/70 font-semibold' onClick={onSubmit}>Create</button>
             </div>
         </div>
     )
